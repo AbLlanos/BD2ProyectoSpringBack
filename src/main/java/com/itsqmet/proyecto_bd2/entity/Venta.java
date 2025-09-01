@@ -3,6 +3,7 @@ package com.itsqmet.proyecto_bd2.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -13,7 +14,7 @@ public class Venta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_venta;
 
-    private LocalDate fecha;
+    private Date fecha;
     private double total;
     private double iva_total;
     private String estado;
