@@ -2,9 +2,8 @@ package com.itsqmet.proyecto_bd2.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-
-import java.time.LocalDateTime;
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Data
@@ -14,12 +13,11 @@ public class Venta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_venta;
 
-    private LocalDateTime fecha;
+    private LocalDate fecha;
     private double total;
     private double iva_total;
     private String estado;
 
-    // Relaciones
     @ManyToOne
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
@@ -28,4 +26,6 @@ public class Venta {
     @JoinColumn(name = "id_empleado")
     private Empleado empleado;
 
+    @OneToMany(mappedBy = "venta", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<VentaDetalle> detalles;
 }

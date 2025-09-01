@@ -17,6 +17,8 @@ public class Categoria {
 
     private String nombre;
 
+    private String descripcion;
+
     // Relación OneToMany con Producto
     @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
     @JsonIgnore
