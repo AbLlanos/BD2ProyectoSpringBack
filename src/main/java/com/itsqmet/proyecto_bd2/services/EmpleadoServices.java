@@ -20,7 +20,7 @@ public class EmpleadoServices {
     }
 
     // Buscar por ID
-    public Optional<Empleado> buscarPorId(Long id) {
+    public Optional<Empleado> buscarPorId(String id) {
         return empleadoRepository.findById(id);
     }
 
@@ -30,7 +30,7 @@ public class EmpleadoServices {
     }
 
     // Eliminar
-    public void eliminarEmpleado(Long id) {
+    public void eliminarEmpleado(String id) {
         empleadoRepository.deleteById(id);
     }
 

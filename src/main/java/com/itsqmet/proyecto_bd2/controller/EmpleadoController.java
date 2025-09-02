@@ -24,7 +24,7 @@ public class EmpleadoController {
 
     // Buscar por ID
     @GetMapping("/{id}")
-    public Optional<Empleado> buscarPorId(@PathVariable Long id) {
+    public Optional<Empleado> buscarPorId(@PathVariable String id) {
         return empleadoService.buscarPorId(id);
     }
 
@@ -36,13 +36,13 @@ public class EmpleadoController {
 
     // Eliminar
     @DeleteMapping("/eliminar/{id}")
-    public void eliminar(@PathVariable Long id) {
+    public void eliminar(@PathVariable String id) {
         empleadoService.eliminarEmpleado(id);
     }
 
     // Actualizar
     @PutMapping("/actualizar/{id}")
-    public Empleado actualizar(@PathVariable Long id, @RequestBody Empleado empleado) {
+    public Empleado actualizar(@PathVariable String id, @RequestBody Empleado empleado) {
         Optional<Empleado> empleadoOptional = empleadoService.buscarPorId(id);
         if (empleadoOptional.isPresent()) {
             Empleado empleadoExistente = empleadoOptional.get();

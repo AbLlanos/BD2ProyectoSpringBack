@@ -20,7 +20,7 @@ public class ProductoServices {
     }
 
     // Buscar producto por ID
-    public Optional<Producto> buscarPorId(Long id) {
+    public Optional<Producto> buscarPorId(String id) {
         return productoRepository.findById(id);
     }
 
@@ -30,7 +30,7 @@ public class ProductoServices {
     }
 
     // Eliminar producto por ID
-    public void eliminarProducto(Long id) {
+    public void eliminarProducto(String id) {
         productoRepository.deleteById(id);
     }
 

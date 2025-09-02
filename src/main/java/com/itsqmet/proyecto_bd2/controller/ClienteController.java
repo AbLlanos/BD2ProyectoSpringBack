@@ -24,7 +24,7 @@ public class ClienteController {
 
     // Buscar por ID
     @GetMapping("/{id}")
-    public Optional<Cliente> buscarPorId(@PathVariable Long id) {
+    public Optional<Cliente> buscarPorId(@PathVariable String id) {
         return clienteService.buscarPorId(id);
     }
 
@@ -36,13 +36,13 @@ public class ClienteController {
 
     // Eliminar
     @DeleteMapping("/eliminar/{id}")
-    public void eliminar(@PathVariable Long id) {
+    public void eliminar(@PathVariable String id) {
         clienteService.eliminarCliente(id);
     }
 
     // Actualizar
     @PutMapping("/actualizar/{id}")
-    public Cliente actualizar(@PathVariable Long id, @RequestBody Cliente cliente) {
+    public Cliente actualizar(@PathVariable String id, @RequestBody Cliente cliente) {
         Optional<Cliente> clienteOptional = clienteService.buscarPorId(id);
         if (clienteOptional.isPresent()) {
             Cliente clienteExistente = clienteOptional.get();

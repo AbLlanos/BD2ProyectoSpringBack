@@ -20,7 +20,7 @@ public class CategoriaServices {
     }
 
     // Buscar
-    public Optional<Categoria> buscarPorId(Long id) {
+    public Optional<Categoria> buscarPorId(String id) {
         return categoriaRepository.findById(id);
     }
 
@@ -30,7 +30,7 @@ public class CategoriaServices {
     }
 
     // Eliminar
-    public void eliminarCategoria(Long id) {
+    public void eliminarCategoria(String id) {
         categoriaRepository.deleteById(id);
     }
 

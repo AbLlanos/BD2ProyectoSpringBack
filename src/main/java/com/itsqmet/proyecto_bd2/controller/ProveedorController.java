@@ -25,7 +25,7 @@ public class ProveedorController {
 
     // Buscar
     @GetMapping("/{id}")
-    public Optional<Proveedor> buscarPorId(@PathVariable Long id) {
+    public Optional<Proveedor> buscarPorId(@PathVariable String id) {
         return proveedorServices.buscarPorId(id);
     }
 
@@ -38,14 +38,14 @@ public class ProveedorController {
 
     // Eliminar
     @DeleteMapping("/eliminar/{id}")
-    public void eliminarProveedor(@PathVariable Long id) {
+    public void eliminarProveedor(@PathVariable String id) {
         proveedorServices.eliminarProveedor(id);
     }
 
     //Actualizar
 
     @PutMapping("/actualizar/{id}")
-    public Proveedor actualizarProveedor(@PathVariable Long id, @RequestBody Proveedor proveedor){
+    public Proveedor actualizarProveedor(@PathVariable String id, @RequestBody Proveedor proveedor){
         Optional<Proveedor> proveedorOptional = proveedorServices.buscarPorId(id);
         if (proveedorOptional.isPresent()){
 

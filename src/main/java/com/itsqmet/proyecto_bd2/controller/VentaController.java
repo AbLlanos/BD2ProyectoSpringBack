@@ -24,7 +24,7 @@ public class VentaController {
 
     // Buscar por ID
     @GetMapping("/{id}")
-    public Optional<Venta> buscarPorId(@PathVariable Long id) {
+    public Optional<Venta> buscarPorId(@PathVariable String id) {
         return ventaService.buscarPorId(id);
     }
 
@@ -36,13 +36,13 @@ public class VentaController {
 
     // Eliminar
     @DeleteMapping("/eliminar/{id}")
-    public void eliminar(@PathVariable Long id) {
+    public void eliminar(@PathVariable String id) {
         ventaService.eliminarVenta(id);
     }
 
     // Actualizar
     @PutMapping("/actualizar/{id}")
-    public Venta actualizar(@PathVariable Long id, @RequestBody Venta venta) {
+    public Venta actualizar(@PathVariable String id, @RequestBody Venta venta) {
         Optional<Venta> ventaOptional = ventaService.buscarPorId(id);
         if (ventaOptional.isPresent()) {
             Venta ventaExistente = ventaOptional.get();

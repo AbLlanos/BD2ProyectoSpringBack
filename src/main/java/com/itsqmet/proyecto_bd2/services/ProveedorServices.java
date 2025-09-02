@@ -20,7 +20,7 @@ public class ProveedorServices {
     }
 
     // Buscar
-    public Optional<Proveedor> buscarPorId(Long id) {
+    public Optional<Proveedor> buscarPorId(String id) {
         return proveedorRepository.findById(id);
     }
 
@@ -30,7 +30,7 @@ public class ProveedorServices {
     }
 
     // Eliminar
-    public void eliminarProveedor(Long id) {
+    public void eliminarProveedor(String id) {
         proveedorRepository.deleteById(id);
     }
 

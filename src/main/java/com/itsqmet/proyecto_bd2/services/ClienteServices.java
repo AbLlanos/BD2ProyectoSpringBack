@@ -20,7 +20,7 @@ public class ClienteServices {
     }
 
     // Buscar por ID
-    public Optional<Cliente> buscarPorId(Long id) {
+    public Optional<Cliente> buscarPorId(String id) {
         return clienteRepository.findById(id);
     }
 
@@ -30,7 +30,7 @@ public class ClienteServices {
     }
 
     // Eliminar
-    public void eliminarCliente(Long id) {
+    public void eliminarCliente(String id) {
         clienteRepository.deleteById(id);
     }
 

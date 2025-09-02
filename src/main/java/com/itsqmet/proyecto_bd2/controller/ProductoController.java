@@ -26,7 +26,7 @@ public class ProductoController {
 
     // Buscar producto por ID
     @GetMapping("/{id}")
-    public Optional<Producto> buscarPorId(@PathVariable Long id) {
+    public Optional<Producto> buscarPorId(@PathVariable String id) {
         return productoServicio.buscarPorId(id);
     }
 
@@ -39,14 +39,14 @@ public class ProductoController {
 
     // Eliminar producto
     @DeleteMapping("/eliminar/{id}")
-    public void eliminarProducto(@PathVariable Long id) {
+    public void eliminarProducto(@PathVariable String id) {
         productoServicio.eliminarProducto(id);
     }
 
     //Actualizar Producto
 
     @PutMapping("/actualizar/{id}")
-    public Producto actualizarProducto(@PathVariable Long id, @RequestBody Producto producto){
+    public Producto actualizarProducto(@PathVariable String id, @RequestBody Producto producto){
         Optional<Producto> productoOptional = productoServicio.buscarPorId(id);
         if (productoOptional.isPresent()){
 

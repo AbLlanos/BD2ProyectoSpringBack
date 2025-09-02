@@ -20,7 +20,7 @@ public class VentaDetalleServices {
     }
 
     // Buscar por ID
-    public Optional<VentaDetalle> buscarPorId(Long id) {
+    public Optional<VentaDetalle> buscarPorId(String id) {
         return ventaDetalleRepository.findById(id);
     }
 
@@ -30,7 +30,7 @@ public class VentaDetalleServices {
     }
 
     // Eliminar
-    public void eliminarDetalle(Long id) {
+    public void eliminarDetalle(String id) {
         ventaDetalleRepository.deleteById(id);
     }
 
