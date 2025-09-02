@@ -1,8 +1,6 @@
 package com.itsqmet.proyecto_bd2.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.annotation.Id;
-import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -11,34 +9,21 @@ import java.util.List;
 
 @Document(collection = "proveedor")
 @Data
-@Table(name = "proveedor")
 public class Proveedor {
 
     @Id
     private String id_proveedor;
 
     private String nombre;
-
     private String ruc;
-
     private String razon_social;
-
     private String correo;
-
     private String telefono;
-
     private String direccion;
-
-    @Column(nullable = false)
     private Boolean estado = true;
-
-    @Column(name = "fecha_registro", updatable = false)
     private LocalDateTime fechaRegistro;
 
-    // Relación OneToMany con Producto
-    @OneToMany(mappedBy = "proveedor", cascade = CascadeType.ALL)
-    @JsonIgnore
-    private List<Producto> productos;
+    private List<String> productos;
 
 
     public String getId_proveedor() {
@@ -113,11 +98,11 @@ public class Proveedor {
         this.fechaRegistro = fechaRegistro;
     }
 
-    public List<Producto> getProductos() {
+    public List<String> getProductos() {
         return productos;
     }
 
-    public void setProductos(List<Producto> productos) {
+    public void setProductos(List<String> productos) {
         this.productos = productos;
     }
 }

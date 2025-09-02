@@ -1,7 +1,6 @@
 package com.itsqmet.proyecto_bd2.entity;
 
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -17,13 +16,9 @@ public class VentaDetalle {
         private double precio_unitario;
         private double subtotal;
 
-        @ManyToOne
-        @JoinColumn(name = "id_venta")
-        private Venta venta;
-
-        @ManyToOne
-        @JoinColumn(name = "id_producto")
-        private Producto producto;
+        //Para Mongo
+        private String id_venta;
+        private String id_producto;
 
 
         public String getId_detalle() {
@@ -58,19 +53,19 @@ public class VentaDetalle {
                 this.subtotal = subtotal;
         }
 
-        public Venta getVenta() {
-                return venta;
+        public String getId_venta() {
+                return id_venta;
         }
 
-        public void setVenta(Venta venta) {
-                this.venta = venta;
+        public void setId_venta(String id_venta) {
+                this.id_venta = id_venta;
         }
 
-        public Producto getProducto() {
-                return producto;
+        public String getId_producto() {
+                return id_producto;
         }
 
-        public void setProducto(Producto producto) {
-                this.producto = producto;
+        public void setId_producto(String id_producto) {
+                this.id_producto = id_producto;
         }
 }

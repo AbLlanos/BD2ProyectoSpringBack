@@ -20,7 +20,6 @@ public class Empleado {
     private String usuario;
     private String password;
 
-    // Rol directo
     private String rol;
 
 
@@ -87,4 +86,5 @@ public class Empleado {
     public void setRol(String rol) {
         this.rol = rol;
     }
+
 }

@@ -22,7 +22,6 @@ public class Cliente {
     private String usuario;
     private String password;
 
-    // Rol directo
     private String rol;
 
     public String getId_cliente() {

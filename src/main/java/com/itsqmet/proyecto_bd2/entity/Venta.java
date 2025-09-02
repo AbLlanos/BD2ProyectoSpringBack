@@ -1,11 +1,9 @@
 package com.itsqmet.proyecto_bd2.entity;
 
-import jakarta.persistence.*;
 import org.springframework.data.annotation.Id;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -21,16 +19,19 @@ public class Venta {
     private double iva_total;
     private String estado;
 
-    @ManyToOne
-    @JoinColumn(name = "id_cliente")
-    private Cliente cliente;
 
-    @ManyToOne
-    @JoinColumn(name = "id_empleado")
-    private Empleado empleado;
+    //Para Mongo
+    private String id_cliente;
+    private String id_empleado;
 
-    @OneToMany(mappedBy = "venta", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<VentaDetalle> detalles;
+    private List<String> detalles;
+
+
+
+
+
+
+
 
 
     public String getId_venta() {
@@ -73,27 +74,27 @@ public class Venta {
         this.estado = estado;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public String getId_cliente() {
+        return id_cliente;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setId_cliente(String id_cliente) {
+        this.id_cliente = id_cliente;
     }
 
-    public Empleado getEmpleado() {
-        return empleado;
+    public String getId_empleado() {
+        return id_empleado;
     }
 
-    public void setEmpleado(Empleado empleado) {
-        this.empleado = empleado;
+    public void setId_empleado(String id_empleado) {
+        this.id_empleado = id_empleado;
     }
 
-    public List<VentaDetalle> getDetalles() {
+    public List<String> getDetalles() {
         return detalles;
     }
 
-    public void setDetalles(List<VentaDetalle> detalles) {
+    public void setDetalles(List<String> detalles) {
         this.detalles = detalles;
     }
 }

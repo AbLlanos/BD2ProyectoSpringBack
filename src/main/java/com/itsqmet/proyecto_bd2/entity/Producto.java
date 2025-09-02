@@ -1,38 +1,26 @@
 package com.itsqmet.proyecto_bd2.entity;
 
-import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-
 @Document(collection = "producto")
 @Data
-@Table(name = "producto")
 public class Producto {
 
     @Id
     private String id_producto;
 
     private String nombre;
-
     private double precio;
-
     private int cantidad;
-
     private double iva;
-
     private String imgUrl;
 
-    // Relación ManyToOne con Categoria
-    @ManyToOne
-    @JoinColumn(name = "id_categoria")
-    private Categoria categoria;
-
-    // Relación ManyToOne con Proveedor
-    @ManyToOne
-    @JoinColumn(name = "id_proveedor")
-    private Proveedor proveedor;
+    // Referencias a Categoria y Proveedor
+    //Para Mongo
+    private String id_categoria;
+    private String id_proveedor;
 
 
     public String getId_producto() {
@@ -83,19 +71,19 @@ public class Producto {
         this.imgUrl = imgUrl;
     }
 
-    public Categoria getCategoria() {
-        return categoria;
+    public String getId_categoria() {
+        return id_categoria;
     }
 
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
+    public void setId_categoria(String id_categoria) {
+        this.id_categoria = id_categoria;
     }
 
-    public Proveedor getProveedor() {
-        return proveedor;
+    public String getId_proveedor() {
+        return id_proveedor;
     }
 
-    public void setProveedor(Proveedor proveedor) {
-        this.proveedor = proveedor;
+    public void setId_proveedor(String id_proveedor) {
+        this.id_proveedor = id_proveedor;
     }
 }
