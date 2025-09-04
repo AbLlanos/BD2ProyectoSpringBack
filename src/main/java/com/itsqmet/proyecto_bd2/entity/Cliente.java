@@ -19,7 +19,6 @@ public class Cliente {
     private String telefono;
     private String direccion;
 
-    private String usuario;
     private String password;
 
     private String rol;
@@ -78,14 +77,6 @@ public class Cliente {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
-    }
-
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
     }
 
     public String getPassword() {

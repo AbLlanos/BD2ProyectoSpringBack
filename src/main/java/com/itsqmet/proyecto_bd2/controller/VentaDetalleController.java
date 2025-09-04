@@ -50,8 +50,6 @@ public class VentaDetalleController {
             detalleExistente.setCantidad(detalle.getCantidad());
             detalleExistente.setPrecio_unitario(detalle.getPrecio_unitario());
             detalleExistente.setSubtotal(detalle.getSubtotal());
-            detalleExistente.setVenta(detalle.getVenta());
-            detalleExistente.setProducto(detalle.getProducto());
 
             return ventaDetalleService.guardarDetalle(detalleExistente);
         }

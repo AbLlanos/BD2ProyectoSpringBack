@@ -17,10 +17,11 @@ public class Empleado {
     private String cargo;
     private Double salario;
 
-    private String usuario;
+    private String email;
     private String password;
 
     private String rol;
+
 
 
     public String getId_empleado() {
@@ -63,12 +64,12 @@ public class Empleado {
         this.salario = salario;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {

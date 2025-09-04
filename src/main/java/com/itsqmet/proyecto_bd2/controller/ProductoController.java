@@ -56,8 +56,6 @@ public class ProductoController {
             productoExistente.setPrecio(producto.getPrecio());
             productoExistente.setCantidad(producto.getCantidad());
             productoExistente.setIva(producto.getIva());
-            productoExistente.setProveedor(producto.getProveedor());
-            productoExistente.setCategoria(producto.getCategoria());
 
             return productoServicio.guardarProducto(productoExistente);
 

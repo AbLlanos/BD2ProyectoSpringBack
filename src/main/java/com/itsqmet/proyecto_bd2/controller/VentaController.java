@@ -51,8 +51,6 @@ public class VentaController {
             ventaExistente.setTotal(venta.getTotal());
             ventaExistente.setIva_total(venta.getIva_total());
             ventaExistente.setEstado(venta.getEstado());
-            ventaExistente.setCliente(venta.getCliente());
-            ventaExistente.setEmpleado(venta.getEmpleado());
 
             return ventaService.guardarVenta(ventaExistente);
         }

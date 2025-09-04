@@ -53,7 +53,6 @@ public class ClienteController {
             clienteExistente.setEmail(cliente.getEmail());
             clienteExistente.setTelefono(cliente.getTelefono());
             clienteExistente.setDireccion(cliente.getDireccion());
-            clienteExistente.setUsuario(cliente.getUsuario());
             clienteExistente.setPassword(cliente.getPassword());
             clienteExistente.setRol(cliente.getRol());
 
