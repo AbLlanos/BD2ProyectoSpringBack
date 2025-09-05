@@ -48,14 +48,13 @@ public class CategoriaController {
     @PutMapping("/actualizar/{id}")
     public Categoria actualizarCategoria(@PathVariable String id, @RequestBody Categoria categoria){
         Optional<Categoria> categoriaOptional = categoriaServices.buscarPorId(id);
-        if (categoriaOptional.isPresent()){
-
+        if (categoriaOptional.isPresent()) {
             Categoria categoriaExistente = categoriaOptional.get();
 
             categoriaExistente.setNombre(categoria.getNombre());
+            categoriaExistente.setDescripcion(categoria.getDescripcion());
 
             return categoriaServices.guardarCategoria(categoriaExistente);
-
         }
         return null;
     }

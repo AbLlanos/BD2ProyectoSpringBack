@@ -48,17 +48,18 @@ public class ProductoController {
     @PutMapping("/actualizar/{id}")
     public Producto actualizarProducto(@PathVariable String id, @RequestBody Producto producto){
         Optional<Producto> productoOptional = productoServicio.buscarPorId(id);
-        if (productoOptional.isPresent()){
-
-            Producto productoExistente=productoOptional.get();
+        if (productoOptional.isPresent()) {
+            Producto productoExistente = productoOptional.get();
 
             productoExistente.setNombre(producto.getNombre());
             productoExistente.setPrecio(producto.getPrecio());
             productoExistente.setCantidad(producto.getCantidad());
             productoExistente.setIva(producto.getIva());
+            productoExistente.setImgUrl(producto.getImgUrl());
+            productoExistente.setId_categoria(producto.getId_categoria());
+            productoExistente.setId_proveedor(producto.getId_proveedor());
 
             return productoServicio.guardarProducto(productoExistente);
-
         }
         return null;
     }

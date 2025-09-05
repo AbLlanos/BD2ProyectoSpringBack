@@ -14,6 +14,7 @@ public class Empleado {
 
     private String nombre;
     private String apellido;
+    private String telefono;
     private String cargo;
     private Double salario;
 
@@ -88,4 +89,11 @@ public class Empleado {
         this.rol = rol;
     }
 
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
 }

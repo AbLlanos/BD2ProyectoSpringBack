@@ -3,8 +3,7 @@ package com.itsqmet.proyecto_bd2.entity;
 import org.springframework.data.annotation.Id;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Document(collection = "proveedor")
@@ -20,11 +19,10 @@ public class Proveedor {
     private String correo;
     private String telefono;
     private String direccion;
-    private Boolean estado = true;
-    private LocalDateTime fechaRegistro;
+    private String estado;
+    private Date fecha_registro;
 
     private List<String> productos;
-
 
     public String getId_proveedor() {
         return id_proveedor;
@@ -82,20 +80,20 @@ public class Proveedor {
         this.direccion = direccion;
     }
 
-    public Boolean getEstado() {
+    public String getEstado() {
         return estado;
     }
 
-    public void setEstado(Boolean estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
 
-    public LocalDateTime getFechaRegistro() {
-        return fechaRegistro;
+    public Date getFecha_registro() {
+        return fecha_registro;
     }
 
-    public void setFechaRegistro(LocalDateTime fechaRegistro) {
-        this.fechaRegistro = fechaRegistro;
+    public void setFecha_registro(Date fecha_registro) {
+        this.fecha_registro = fecha_registro;
     }
 
     public List<String> getProductos() {

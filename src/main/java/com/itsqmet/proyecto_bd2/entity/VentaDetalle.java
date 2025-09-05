@@ -5,20 +5,30 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Date;
+
 @Document(collection = "ventaDetalle")
 @Data
 public class VentaDetalle {
 
         @Id
         private String id_detalle;
+        private String id_venta;
+        private String id_producto;
+
+        private String nombre_producto;
 
         private int cantidad;
         private double precio_unitario;
         private double subtotal;
+        private double iva;
+        private double descuento;
+        private Date fecha;
 
-        //Para Mongo
-        private String id_venta;
-        private String id_producto;
+
+
+
+
 
 
         public String getId_detalle() {

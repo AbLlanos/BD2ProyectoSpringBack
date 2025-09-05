@@ -52,6 +52,7 @@ public class EmpleadoController {
             empleadoExistente.setCargo(empleado.getCargo());
             empleadoExistente.setSalario(empleado.getSalario());
             empleadoExistente.setEmail(empleado.getEmail());
+            empleadoExistente.setTelefono(empleado.getTelefono());
             empleadoExistente.setPassword(empleado.getPassword());
             empleadoExistente.setRol(empleado.getRol());
 

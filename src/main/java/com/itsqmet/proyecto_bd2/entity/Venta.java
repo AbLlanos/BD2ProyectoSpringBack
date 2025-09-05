@@ -13,19 +13,17 @@ public class Venta {
 
     @Id
     private String id_venta;
-
     private Date fecha;
     private double total;
     private double iva_total;
+    private double descuento_total;
     private String estado;
+    private String metodo_pago;
 
-
-    //Para Mongo
     private String id_cliente;
     private String id_empleado;
 
     private List<String> detalles;
-
 
 
 
