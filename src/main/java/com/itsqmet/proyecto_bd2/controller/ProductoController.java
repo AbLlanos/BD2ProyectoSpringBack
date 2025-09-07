@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -63,5 +64,27 @@ public class ProductoController {
         }
         return null;
     }
+
+    // En ProductoController.java
+    @PutMapping("/actualizar-stock/{id}")
+    public Producto actualizarStock(@PathVariable String id, @RequestBody Map<String, Integer> request) {
+        Integer cantidadVendida = request.get("cantidadVendida");
+        Optional<Producto> productoOptional = productoServicio.buscarPorId(id);
+
+        if (productoOptional.isPresent()) {
+            Producto producto = productoOptional.get();
+            int nuevoStock = producto.getCantidad() - cantidadVendida;
+
+            if (nuevoStock < 0) {
+                throw new RuntimeException("Stock insuficiente");
+            }
+
+            producto.setCantidad(nuevoStock);
+            return productoServicio.guardarProducto(producto);
+        }
+        return null;
+    }
+
+
 
 }
