@@ -65,7 +65,7 @@ public class ProductoController {
         return null;
     }
 
-    // En ProductoController.java
+    // En Actualziar stock tras ahcer venta
     @PutMapping("/actualizar-stock/{id}")
     public Producto actualizarStock(@PathVariable String id, @RequestBody Map<String, Integer> request) {
         Integer cantidadVendida = request.get("cantidadVendida");
